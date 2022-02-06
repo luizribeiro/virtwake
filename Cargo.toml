@@ -1,0 +1,9 @@
+[package]
+name = "virtwold"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+#virt = "0.2.11"
+virt = { git = "https://github.com/libvirt/libvirt-rust" }
+wake-on-lan = { git = "https://github.com/gcastellov/wake-on-lan" }
