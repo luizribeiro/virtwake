@@ -19,7 +19,11 @@ fn main() {
 
         let domain = optional_domain.unwrap();
         println!("Starting domain {}...", domain.get_name().unwrap());
-        let ret = domain.create();
+        let ret = if domain.is_active().unwrap() {
+            domain.create()
+        } else {
+            domain.resume()
+        };
         if ret.is_err() {
             eprintln!("Error: {}", ret.unwrap_err());
         }
